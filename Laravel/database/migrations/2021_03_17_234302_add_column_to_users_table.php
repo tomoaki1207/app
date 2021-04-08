@@ -21,7 +21,7 @@ class AddColumnToUsersTable extends Migration
             $table->integer('want_talk')->nullable();
             $table->integer('can_talk')->nullable();
             $table->integer('occupation')->nullable();
-            $table->string('img_name')->default('');
+            $table->string('img_name')->default('../../images/avator.jpeg');
         });
     }
 

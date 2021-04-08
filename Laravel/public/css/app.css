@@ -16159,3 +16159,47 @@ readers do not read off random characters that represent icons */
   background: green;
   color: #fff;
 }
+
+.signinPage {
+  margin-top: 10vh;
+}
+.signinPage .title {
+  color: green;
+  margin: 20px 0;
+  text-align: center;
+}
+.signinPage .loginBtn {
+  padding: 12px;
+  width: 200px;
+  border-radius: 21px;
+  background: green;
+  color: #fff;
+  text-align: center;
+  border: none;
+  margin-top: 20px;
+  opacity: 1;
+  transition: opacity 0.5s;
+  cursor: pointer;
+}
+.signinPage .loginBtn:hover {
+  opacity: 0.7;
+}
+.signinPage .errorMessage {
+  color: red;
+}
+
+body {
+  overflow: visible;
+}
+
+.notice,
+.alert {
+  display: none;
+}
+
+.signupPage .header {
+  padding: 20px;
+  text-align: center;
+  background: green;
+  color: #fff;
+}

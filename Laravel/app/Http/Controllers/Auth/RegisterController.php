@@ -53,6 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'img_name' => ['sometimes', 'image', 'mimes:jpg,jpeg,bmp,svg,png', 'max:2000'],
         ]);
     }
 
@@ -64,6 +65,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        if(request()->has('img_name')){
+            $saveImage = request()->file('img_name');
+            $imgName = time() . '.' . $saveImage->getClientOriginalExtension() ;
+            $imgpath = public_path('/avator/');
+            $saveImage->move($imgpath, $imgName);
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'self_introduction' => $data['self_introduction'],
+                'sex' => $data['sex'],
+                'area' => $data['area'],
+                'age' => $data['age'],
+                'want_talk' => $data['want_talk'],
+                'can_talk' => $data['can_talk'],
+                'occupation' => $data['occupation'],
+                'img_name' => '/avator/' . $imgName,
+            ]);
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -75,7 +95,7 @@ class RegisterController extends Controller
             'want_talk' => $data['want_talk'],
             'can_talk' => $data['can_talk'],
             'occupation' => $data['occupation'],
-            'img_name' => $data['img_name'],
+            
         ]);
     }
 }
