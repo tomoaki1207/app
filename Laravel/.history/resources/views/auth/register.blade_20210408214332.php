@@ -96,7 +96,7 @@
         @endforeach
       </select>
       </div>
-      <label for="file_photo" class="userProfileImg">
+      <label for="file_photo" class="rounded-circle userProfileImg">
         <div class="userProfileImg_description">画像をアップロード</div>
         
         <input type="file" id="file_photo" name="img_name">

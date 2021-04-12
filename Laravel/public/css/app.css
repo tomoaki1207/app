@@ -16187,6 +16187,36 @@ readers do not read off random characters that represent icons */
 .signinPage .errorMessage {
   color: red;
 }
+.signinPage .userIcon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: green;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signinPage .loginBtn {
+  padding: 12px;
+  width: 200px;
+  border-radius: 21px;
+  background: green;
+  color: #fff;
+  text-align: center;
+  border: none;
+  margin-top: 20px;
+  opacity: 1;
+  transition: opacity 0.5s;
+  cursor: pointer;
+}
+.signinPage .loginBtn:hover {
+  opacity: 0.7;
+}
+.signinPage .errorMessage {
+  color: green;
+}
 
 body {
   overflow: visible;
